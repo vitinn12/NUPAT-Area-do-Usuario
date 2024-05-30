@@ -1,0 +1,339 @@
+:root {
+    --cinza: #E7E4D7;
+    --preto: #000000;
+    --meiobranco: #ececec;
+    --verde: #304D30;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    background-color:var(--cinza);
+    font-family: "Red Hat Display", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+}
+
+header>.logo {
+    width: 250px;
+    height: 240px;
+}
+header .perfil {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header .perfil i {
+    font-size: 30px;
+}
+.corpo_principal {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    gap: 50px;
+}
+
+.corpo_principal>article {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.corpo_principal>article>hr {
+    flex: 1;
+}
+
+.container {
+    display: grid;
+    height: 500px;
+    place-items: center;
+    grid-template-columns: 30% 70%;
+    grid-template-areas:
+        "section article"
+    ;
+}
+
+.container section {
+    display: grid;
+    grid-area: section;
+    gap: 10px;
+}
+
+.container article {
+    grid-area: article;
+    padding: 30px;
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--meiobranco);
+    border-radius: 10px;
+}
+
+.container>article>strong {
+    font-size: 22px;
+    display: flex;
+}
+
+.dados-perfil {
+    display: flex;
+    gap: 90px;
+}
+
+.dados-perfil>.dados {
+    display: grid;
+    gap: 10px;
+}
+
+.dados-perfil>.image {
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.dados-perfil>.image>i {
+    font-size: 100px;
+}
+
+.dados-perfil>.image>a {
+    width: 120px;
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    border-radius: 9px;
+    border: 2px solid #304D30;
+    font-weight: bold;
+    color: #304D30;
+}
+
+.dados-perfil>.image>a:hover {
+    background-color: var(--verde);
+    color: white;
+    transition: all 0.6s ease;
+}
+.container > article > .btn-salvar {
+    display: grid;
+    place-items: center;
+    height: 80px;
+}
+.container > article > .btn-salvar > a {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: var(--verde);
+    font-weight: bold;
+    font-size: 15px;
+    width: 200px;
+    height: 40px;
+    color: white;
+}
+.container > article > .btn-salvar > a:hover {
+    border: 2px solid var(--verde);
+    background-color: white;
+    color: black;
+    transition: all 0.6s ease-in-out;
+
+}
+.container section>a {
+    width: 150px;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 9px;
+}
+
+.container section a:hover {
+    background-color: var(--verde);
+    border-radius: 3px;
+    color: white;
+    border-bottom: 2px solid white;
+    transition: all 0.6s ease;
+}
+
+#btn-sair:hover {
+    color: white;
+    border-radius: 3px;
+    border-bottom: 2px solid white;
+    background-color: rgb(202, 0, 0);
+}
+
+/* submenu */
+.submenu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF0E5;
+    font-weight: bold;
+    height: 35px;
+}
+
+.submenu ul {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    gap: 500px;
+}
+
+.submenu ul li {
+    position: relative;
+    cursor: pointer;
+
+}
+
+.submenu ul li a,
+.submenu ul li p {
+    color: #304D30;
+    transition: background .3s, color .3s;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.submenu ul li a:hover,
+.submenu ul li p:hover {
+    background-color: #afc9afa8;
+    color: #000000;
+}
+
+.submenu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 220px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #EEF0E5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.submenu ul li:hover ul {
+    display: block;
+}
+
+.submenu ul ul li {
+    margin: 0;
+}
+
+.submenu ul ul li a {
+    display: block;
+
+}
+
+@media screen and (max-width:1300px) {
+    .container section>a {
+        width: 129%;
+        font-size: 10px;
+    }
+
+    .corpo_principal {
+        padding: 20px;
+    }
+
+    .submenu ul {
+        gap: 299px;
+    }
+}
+
+@media screen and (max-width:490px) {
+    header {
+        justify-content: space-around;
+    }
+
+    header>.perfil>strong {
+        display: none;
+    }
+
+    header>.logo {
+        width: 190px;
+        height: 190px;
+    }
+
+    .container {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "section"
+            "article";
+    }
+
+    .corpo_principal>article>h3 {
+        font-size: 17px;
+    }
+
+    .container section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .container section a {
+        padding: 0;
+        gap: 6px;
+        justify-content: center;
+        width: 100px;
+    }
+
+    .container article {
+        gap: 13px;
+        font-size: 13px;
+        height: 500px;
+    }
+    .container > article > strong {
+        font-size: 13px;
+    }
+    .container > article > .dados-perfil {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        gap: 30px;
+    }
+    .container > article > .dados-perfil > .image {
+        gap: 12px;
+    }
+    .dados-perfil a {
+        display: grid;
+        place-items: center;
+    }
+    .corpo_principal {
+        padding: 20px;
+    }
+
+    .submenu ul {
+        gap: 150px;
+    }
+
+    .submenu p,
+    a {
+        font-size: 12px;
+    }
+
+    #btn-suporte {
+        right: 0;
+    }
+
+}
