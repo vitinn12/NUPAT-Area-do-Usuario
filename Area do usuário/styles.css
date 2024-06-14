@@ -3,12 +3,14 @@
     --preto: #000000;
     --meiobranco: #ececec;
     --verde: #304D30;
+    --branconeve: rgb(255, 255, 255);
+    --verdefraco: #afc9afa8;
 }
 
 * {
     margin: 0;
     padding: 0;
-    
+
 }
 
 body {
@@ -16,54 +18,90 @@ body {
     background-color: var(--cinza);
     font-family: "Red Hat Display", sans-serif;
 }
+
 /* cabeçalho acessibilidade */
-.cbc-acessibilidade ul, a{
-    list-style: none;
-    text-decoration: none;
-    color: black;
-}
-#title-acessibilidade {
-    font-weight: bold;
-}
+
 .cbc-acessibilidade {
-    height: 6%;
-    padding: 5px 50px;
+    height: 50px;
+    width: 100%;
     background-color: #EEF0E5;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
+
 .cbc-acessibilidade ul {
     display: flex;
     justify-content: space-around;
 }
-.cbc-acessibilidade li {
-    color: black;
+.icons-contraste a{
+    cursor: pointer;
+    height: 30px;
+    width: 20px;
+    padding-left: 5px;
+    font-size: 16px;
+    background-color: var(--verdefraco);
+    border-radius: 4px;
 }
-.cbc-acessibilidade .icons1 {
+.contraste,
+.icons-contraste {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
+    cursor: pointer;
 }
-.cbc-acessibilidade .icons {
-    display: flex;
-}
-.cbc-acessibilidade.icons .bibi-moon-fill, .bibi-sun-fill, .bibi-mic-fill {
-    padding: 1px 5px;
 
+.cbc-acessibilidade ul,
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+#title-acessibilidade {
+    font-weight: bold;
+}
+
+.btn-a {
+    cursor: pointer;
+    padding: 3px;
+    margin: 0 5px;
+    height: 28px;
+    background-color: var(--verdefraco);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+.cbc-acessibilidade nav ul li:hover {
+    background-color: #e0e0e0;
+    transition: 0.5s;
 }
 
 /* fim do cabeçalho de acessibilidade */
+
 header {
     width: 100%;
     height: 70px;
     background-color: var(--verde);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #ffffff;
 }
 
 header>.logo {
-    width: 250px;
-    height: 240px;
+    width: 130px;
+    height: 60px;
+    padding-top: 10px;
+    padding-left: 100px;
 }
 
 header .perfil {
@@ -71,6 +109,7 @@ header .perfil {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-right: 100px;
 }
 
 header .perfil i {
@@ -88,12 +127,12 @@ header .perfil i {
     display: flex;
     align-items: center;
     gap: 30px;
-    font-size: 23px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.corpo_principal>article>hr {
+hr {
     flex: 1;
+    margin: 10px;
 }
 
 .container {
@@ -110,13 +149,37 @@ header .perfil i {
     display: grid;
     grid-area: section;
     gap: 10px;
+    width: 183px;
+}
+
+.container section>a {
+    width: 165px;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    gap: 10px;
+    line-height: 30px;
+    padding: 9px;
+}
+
+.container section a:hover {
+    background-color: var(--verde);
+    border-radius: 3px;
+    color: white;
+    transition: all 0.6s ease;
+}
+
+#btn-sair:hover {
+    color: white;
+    border-radius: 3px;
+    background-color: rgb(202, 0, 0);
 }
 
 .container article {
     grid-area: article;
-    padding: 30px;
+    padding: 20px;
     width: 80%;
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -124,19 +187,31 @@ header .perfil i {
     border-radius: 10px;
 }
 
-.container>article>strong {
-    font-size: 22px;
-    display: flex;
+.container article hr {
+    margin: 1;
+}
+
+.input-text {
+    border: none;
+    height: 20px;
+    width: 120px;
 }
 
 .dados-perfil {
     display: flex;
-    gap: 90px;
+    gap: 100px;
 }
 
 .dados-perfil>.dados {
     display: grid;
     gap: 10px;
+}
+
+.dados p {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 5px;
 }
 
 .dados-perfil>.image {
@@ -194,31 +269,6 @@ header .perfil i {
 
 }
 
-.container section>a {
-    width: 150px;
-    text-decoration: none;
-    color: #000000;
-    display: flex;
-    gap: 10px;
-    font-size: 15px;
-    line-height: 30px;
-    padding: 9px;
-}
-
-.container section a:hover {
-    background-color: var(--verde);
-    border-radius: 3px;
-    color: white;
-    border-bottom: 2px solid white;
-    transition: all 0.6s ease;
-}
-
-#btn-sair:hover {
-    color: white;
-    border-radius: 3px;
-    border-bottom: 2px solid white;
-    background-color: rgb(202, 0, 0);
-}
 
 /* submenu */
 .submenu {
@@ -281,23 +331,133 @@ header .perfil i {
 
 .submenu ul ul li a {
     display: block;
+}
+
+/* rodape */
+.primeiro-rodape {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.voltar-ao-topo {
+    display: flex;
+    padding: 10px;
+    gap: 12px;
+}
+
+.primeiro-rodape a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.voltar-ao-topo hr {
+    flex: 1;
+    margin: 10px auto;
+}
+
+
+.voltar-ao-topo i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.primeiro-rodape article {
+    display: block;
+    padding: 20px;
+}
+
+.container-texto {
+    display: flex;
+    gap: 50px;
+    height: 2 00px;
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+.primeiro-txt,
+.segundo-txt {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.primeiro-txt p,
+.segundo-txt p {
+    display: grid;
+    gap: 5px;
 
 }
-footer {
-    background-color: var(--verde);
-    padding: 20px;
-    text-align: center;
+
+.primeiro-txt p :hover,
+.segundo-txt p :hover {
+    color: #00ff00;
+    transition: 0.5s;
 }
-.copyright {
+
+.img-dados {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
+
+.img-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.dados-icons {
+    color: var(--verde);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dados-icons>.icons {
+    font-size: 28px;
+    display: flex;
+    gap: 12px;
+}
+
+.icons a i {
+    color: var(--verde);
+}
+
+.icons a i:hover {
+    transition: 0.5s;
+    color: var(--verdeclaro);
+}
+
+.dados-icons h3 {
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.dados-icons p {
+    line-height: 22px;
+}
+
+.segundo-rodape {
+    background-color: var(--verde);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
 .copyright p {
     margin: 1px 0;
-    font-size: 14px;
     color: var(--branconeve);
 }
+
 @media screen and (max-width:1300px) {
     .container section>a {
         width: 129%;
@@ -313,24 +473,17 @@ footer {
     }
 }
 
+@media (prefers-color-scheme:dark) {}
+
 @media screen and (max-width:490px) {
-    .cbc-acessibilidade ul{
-        display: flex;
-        justify-content: center;
+
+    .cbc-acessibilidade {
+        height: 90px;
+    }
+
+    .cbc-acessibilidade ul {
         column-gap: 20px;
         row-gap: 7px;
-        flex-wrap: wrap;
-    }
-    .icons1 svg{
-        width: 15px;
-        height: 14px;
-    }
-    .icons svg {
-        width: 14px;
-        height: 14px;
-    }
-    header {
-        justify-content: space-around;
     }
 
     header>.perfil>strong {
@@ -338,9 +491,18 @@ footer {
     }
 
     header>.logo {
-        width: 190px;
-        height: 190px;
+        width: 90px;
+        height: 40px;
     }
+
+    header .logo {
+        padding-left: 50px;
+    }
+
+    header .perfil {
+        padding-right: 0;
+    }
+
 
     .container {
         display: flex;
@@ -350,7 +512,7 @@ footer {
         grid-template-areas:
             "section"
             "article";
-            height: 100%;
+        height: 100%;
     }
 
     .corpo_principal>article>h3 {
@@ -362,6 +524,7 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
         gap: 9px;
+
     }
 
     .container section a {
@@ -374,7 +537,12 @@ footer {
     .container article {
         gap: 13px;
         font-size: 13px;
-        height: 500px;
+        height: 550px;
+    }
+
+    .container article hr {
+        flex: 0;
+        margin: 0;
     }
 
     .container>article>strong {
@@ -412,8 +580,40 @@ footer {
     #btn-suporte {
         right: 0;
     }
+
     footer {
         height: 100%;
+        color: white;
     }
 
+    .img-dados {
+        display: block;
+    }
+
+    .img-logo {
+        justify-content: end;
+    }
+
+    #logo-nupat {
+        width: 200px;
+        height: 200px;
+    }
+
+    #logo-ifrn {
+        width: 150px;
+        height: 150px;
+    }
+
+    .dados-icons {
+        width: 90%;
+    }
+
+    .dados-icons strong,
+    .dados-icons p {
+        font-size: 17px;
+    }
+
+    .copyright p {
+        font-size: 9px;
+    }
 }
