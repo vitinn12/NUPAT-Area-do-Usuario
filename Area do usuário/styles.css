@@ -19,10 +19,10 @@ body {
     font-family: "Red Hat Display", sans-serif;
 }
 
-/* cabeçalho acessibilidade */
+/* cabeçalho acessibilidade versao desktop */
 
 .cbc-acessibilidade {
-    height: 50px;
+    height: 30px;
     width: 100%;
     background-color: #EEF0E5;
     display: inline-flex;
@@ -35,22 +35,22 @@ body {
     display: flex;
     justify-content: space-around;
 }
-.icons-contraste a{
+
+.icons-contraste a {
     cursor: pointer;
-    height: 30px;
+    height: 15px;
     width: 20px;
-    padding-left: 5px;
-    font-size: 16px;
-    background-color: var(--verdefraco);
-    border-radius: 4px;
+    font-size: 15px;
 }
+
 .contraste,
 .icons-contraste {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
     cursor: pointer;
 }
+
 
 .cbc-acessibilidade ul,
 li,
@@ -60,25 +60,23 @@ a {
     color: black;
     display: flex;
     align-items: center;
-    gap: 5px;
-
+    gap: 10px;
 }
-
 
 #title-acessibilidade {
     font-weight: bold;
 }
 
+
 .btn-a {
     cursor: pointer;
     padding: 3px;
     margin: 0 5px;
-    height: 28px;
+    height: 18px;
     background-color: var(--verdefraco);
     border-radius: 4px;
     display: inline-block;
 }
-
 
 .cbc-acessibilidade nav ul li:hover {
     background-color: #e0e0e0;
@@ -98,7 +96,7 @@ header {
 }
 
 header>.logo {
-    width: 130px;
+    width: 10%;
     height: 60px;
     padding-top: 10px;
     padding-left: 100px;
@@ -110,6 +108,7 @@ header .perfil {
     align-items: center;
     justify-content: space-around;
     padding-right: 100px;
+
 }
 
 header .perfil i {
@@ -119,7 +118,7 @@ header .perfil i {
 .corpo_principal {
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 60px;
     gap: 50px;
 }
 
@@ -130,7 +129,12 @@ header .perfil i {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-hr {
+.corpo_principal article h1 {
+    font-size: 30px;
+}
+
+.corpo_principal article hr {
+    border-color: #00ff00;
     flex: 1;
     margin: 10px;
 }
@@ -139,67 +143,84 @@ hr {
     display: grid;
     height: 500px;
     place-items: center;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 18% 12% 65%;
     grid-template-areas:
-        "section article"
+        "section linha-vertical article"
     ;
 }
 
 .container section {
+    width: 200px;
     display: grid;
     grid-area: section;
-    gap: 10px;
-    width: 183px;
 }
 
 .container section>a {
-    width: 165px;
+    width: 100%;
+    height: 45px;
     text-decoration: none;
     color: #000000;
     display: flex;
     gap: 10px;
     line-height: 30px;
     padding: 9px;
+    font-size: 20px;
 }
 
 .container section a:hover {
     background-color: var(--verde);
-    border-radius: 3px;
+    border-radius: 14px;
     color: white;
-    transition: all 0.6s ease;
+    transition: all 0.2s ease;
 }
 
 #btn-sair:hover {
     color: white;
-    border-radius: 3px;
+    border-radius: 14px;
     background-color: rgb(202, 0, 0);
+    transition: all 0.2s ease;
 }
-
+#btn-minhaConta:hover {
+    color: black;
+}
+.linha-vertical{
+    grid-area: linha-vertical;
+    height: 400px;
+    border-left: 1px solid;
+}
 .container article {
     grid-area: article;
-    padding: 20px;
-    width: 80%;
+    padding: 30px;
+    width: 100%;
     height: 450px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: var(--meiobranco);
+    background-color: white;
     border-radius: 10px;
 }
-
-.container article hr {
-    margin: 1;
+.linha-horizontal {
+    position: relative;
+    right: 30px;
+    width: 107.7%;
+    border-bottom: 1px solid;
+    border-color: #00ff00;
 }
-
-.input-text {
+.input-text{
     border: none;
     height: 20px;
     width: 120px;
+    background-color: var(--meiobranco);
 }
-
+.input-text::placeholder {
+    opacity: 0.4;
+}
+.input-date {
+    border: none;
+}
 .dados-perfil {
     display: flex;
-    gap: 100px;
+    justify-content: space-between;
 }
 
 .dados-perfil>.dados {
@@ -215,9 +236,9 @@ hr {
 }
 
 .dados-perfil>.image {
-    width: 50%;
     display: grid;
     place-items: center;
+    padding-right: 70px;
 }
 
 .dados-perfil>.image>i {
@@ -253,22 +274,18 @@ hr {
     place-items: center;
     text-decoration: none;
     border-radius: 8px;
-    background-color: var(--verde);
+    background-color: #a1d7a1;
     font-weight: bold;
     font-size: 15px;
     width: 200px;
     height: 40px;
-    color: white;
 }
 
 .container>article>.btn-salvar>a:hover {
-    border: 2px solid var(--verde);
-    background-color: white;
-    color: black;
-    transition: all 0.6s ease-in-out;
+    background-color: #95eb95;
+    transition:0.5s;
 
 }
-
 
 /* submenu */
 .submenu {
@@ -349,7 +366,6 @@ hr {
 .primeiro-rodape a {
     text-decoration: none;
     color: black;
-    
 }
 
 .voltar-ao-topo hr {
@@ -473,17 +489,9 @@ hr {
     }
 }
 
-@media (prefers-color-scheme:dark) {}
-
 @media screen and (max-width:490px) {
-
     .cbc-acessibilidade {
-        height: 90px;
-    }
-
-    .cbc-acessibilidade ul {
-        column-gap: 20px;
-        row-gap: 7px;
+        display: none;
     }
 
     header>.perfil>strong {
@@ -514,9 +522,14 @@ hr {
             "article";
         height: 100%;
     }
+    .linha-vertical{display: none;}
+    .linha-horizontal {
+        right: 0;
+        width: 100%;
+    }
 
-    .corpo_principal>article>h3 {
-        font-size: 17px;
+    .corpo_principal>article>h1 {
+        font-size: 20px;
     }
 
     .container section {
@@ -524,6 +537,7 @@ hr {
         justify-content: center;
         flex-wrap: wrap;
         gap: 9px;
+        width: 100%;
 
     }
 
@@ -535,9 +549,10 @@ hr {
     }
 
     .container article {
-        gap: 13px;
+        gap: 23px;
         font-size: 13px;
-        height: 550px;
+        height:600px;
+        width: 80%;
     }
 
     .container article hr {
@@ -552,11 +567,12 @@ hr {
     .container>article>.dados-perfil {
         flex-wrap: wrap-reverse;
         justify-content: center;
-        gap: 30px;
+        gap: 50px;
     }
 
     .container>article>.dados-perfil>.image {
         gap: 12px;
+        padding-right: 0;
     }
 
     .dados-perfil a {
